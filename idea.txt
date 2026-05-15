@@ -1,0 +1,7 @@
+- Xây dựng website bán hàng chuyên nghiệp cho Công Ty TNHH Amos Việt Nam, địa chỉ website là amosvietnam.com, thông tin liên hệ:Địa chỉ: Đường số 12, KCN Đông Xuyên, Phường Rạch Dừa, TP Hồ Chí Minh, Việt Nam, số điện thoại bàn: 02543530988, số điện thoại di động: 0902288060 , email: cong.nguyen@amosgroup.com, zalo: 0902288060 , linkedin: https://www.linkedin.com/company/amosgroup
+- Lấy logo từ ảnh amoslogo.png trong thư mục logo, xây dựng template và màu sắc chủ đạo dựa trên website https://www.amosgroup.com/
+- Danh mục bán hàng tham khảo dựa trên website https://capvina.vn/
+- Thông tin lấy thêm từ: https://www.linkedin.com/company/amosgroup
+- Thêm các yếu tố trang web SEO, marketing, dễ tìm kiếm trên google, search cho linh vực: cáp thép, cáp cẩu, thiết bị nâng hạ, wirerope, sling, shackle, ma ní, pp rope, hook, ferrule, dyneema rope, manila rope, grommet sling, webbing sling, round sling, amos, IWRC, lifting, supply, marine, DSR, Bridon, Usha, Kiswire. Khu vực: Vũng Tàu, Thành phố Hồ Chí Minh, Hochiminh city, Vietnam, PTSC, dầu khí,....
+- Yêu cầu xây dựng website đẹp, chuyên nghiệp
+- Lĩnh vực website là cáp thép, cáp cẩu, thiết bị nâng hạ, wirerope, sling, shackle, ma ní, pp rope, hook, ferrule, dyneema rope, manila rope, grommet sling, webbing sling, round sling
