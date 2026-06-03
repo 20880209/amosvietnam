@@ -56,11 +56,13 @@
             background-size: cover;
         }
 
-        .product-card img {
+        .product-card img,
+        .catalogue-card img {
             transition: transform 500ms ease;
         }
 
-        .product-card:hover img {
+        .product-card:hover img,
+        .catalogue-card:hover img {
             transform: scale(1.05);
         }
     </style>
@@ -170,51 +172,123 @@
                     </p>
                 </div>
 
-                <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-link text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Cáp thép</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Cáp cẩu, cáp thép bấm chì, cáp Hàn Quốc, cáp bọc nhựa, cáp mạ kẽm, cáp inox, cáp neo giằng, cáp chống xoắn, cáp thang máy.</p>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=900&auto=format&fit=crop" alt="Cuộn cáp thép công nghiệp" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Cáp & sling</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-link text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Cáp thép</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Cáp cẩu, cáp thép bấm chì, cáp Hàn Quốc, cáp bọc nhựa, cáp mạ kẽm, cáp inox, cáp neo giằng, cáp chống xoắn, cáp thang máy.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-grip-lines text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Cáp vải & sling</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Webbing sling, round sling, sling cáp thép kẹp chì, sling nhiều chân và cấu hình nâng hạ theo tải trọng dự án.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=900&auto=format&fit=crop" alt="Dây sling nâng hạ trong xưởng" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Cáp & sling</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-grip-lines text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Cáp vải & sling</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Webbing sling, round sling, sling cáp thép kẹp chì, sling nhiều chân và cấu hình nâng hạ theo tải trọng dự án.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-screwdriver-wrench text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Ốc siết cáp & ferrule</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Ốc siết cáp Hàn Quốc, ốc siết mạ kẽm, ốc siết inox 304, ống nhôm kẹp cáp, ferrule và lưới cáp inox.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=900&auto=format&fit=crop" alt="Phụ kiện kẹp và siết cáp" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Phụ kiện cáp</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-screwdriver-wrench text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Ốc siết cáp & ferrule</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Ốc siết cáp Hàn Quốc, ốc siết mạ kẽm, ốc siết inox 304, ống nhôm kẹp cáp, ferrule và lưới cáp inox.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-arrows-up-down text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Tăng đơ cáp</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Tăng đơ Hàn Quốc, tăng đơ inox, tăng đơ mạ kẽm, tăng đơ vải chằng hàng, tăng đơ xích và tăng đơ trang trí.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop" alt="Tăng đơ và phụ kiện căng cáp" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Phụ kiện cáp</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-arrows-up-down text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Tăng đơ cáp</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Tăng đơ Hàn Quốc, tăng đơ inox, tăng đơ mạ kẽm, tăng đơ vải chằng hàng, tăng đơ xích và tăng đơ trang trí.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-anchor text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Ma ní & móc cẩu</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Ma ní omega, ma ní chữ U, ma ní inox, móc cẩu, bẹn lót cáp, khóa nối xích và vòng khuyên cáp.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=900&auto=format&fit=crop" alt="Ma ní và móc cẩu chịu tải" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Rigging</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-anchor text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Ma ní & móc cẩu</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Ma ní omega, ma ní chữ U, ma ní inox, móc cẩu, bẹn lót cáp, khóa nối xích và vòng khuyên cáp.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-dolly text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Dây xích & pa lăng</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Dây xích đen, xích inox, xích mạ kẽm, sling xích cẩu hàng, pa lăng xích kéo tay, lắc tay và pa lăng điện.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=900&auto=format&fit=crop" alt="Dây xích và thiết bị nâng hạ" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Thiết bị nâng</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-dolly text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Dây xích & pa lăng</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Dây xích đen, xích inox, xích mạ kẽm, sling xích cẩu hàng, pa lăng xích kéo tay, lắc tay và pa lăng điện.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-ship text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Vật tư tàu biển</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Dây PP neo tàu, vật tư boong tàu, phụ kiện neo buộc, vật tư thay thế cho vận hành, docking và bảo trì marine.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=900&auto=format&fit=crop" alt="Vật tư phục vụ tàu biển và neo buộc" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Marine</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-ship text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Vật tư tàu biển</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Dây PP neo tàu, vật tư boong tàu, phụ kiện neo buộc, vật tư thay thế cho vận hành, docking và bảo trì marine.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-bolt text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Bu lông & vật tư liên kết</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Bu lông cường độ cao, bu lông nở, bu lông neo móng, bu lông liên kết, bu lông mắt và ty ren.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1535970793482-07de93762dc4?q=80&w=900&auto=format&fit=crop" alt="Bu lông và vật tư liên kết" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Liên kết</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-bolt text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Bu lông & vật tư liên kết</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Bu lông cường độ cao, bu lông nở, bu lông neo móng, bu lông liên kết, bu lông mắt và ty ren.</p>
+                        </div>
                     </article>
-                    <article class="rounded-md border border-amos-line bg-[#f7fafb] p-6 shadow-soft">
-                        <i class="fa-solid fa-boxes-stacked text-2xl text-amos-blue"></i>
-                        <h3 class="mt-4 text-xl font-extrabold text-amos-deep">Sản phẩm khác</h3>
-                        <p class="mt-3 text-sm leading-6 text-amos-steel">Tời điện, kìm cắt cáp thép, kẹp tôn, dây chằng hàng tăng đơ, lưới che nắng và các vật tư theo yêu cầu.</p>
+                    <article class="catalogue-card overflow-hidden rounded-md border border-amos-line bg-white shadow-soft">
+                        <div class="relative h-52 overflow-hidden bg-amos-mist">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop" alt="Dụng cụ và vật tư công nghiệp theo yêu cầu" class="h-full w-full object-cover">
+                            <span class="absolute left-4 top-4 rounded-md bg-white/95 px-3 py-1 text-xs font-extrabold uppercase text-amos-blue">Theo yêu cầu</span>
+                        </div>
+                        <div class="flex min-h-[190px] flex-col p-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-boxes-stacked text-xl text-amos-blue"></i>
+                                <h3 class="text-xl font-extrabold text-amos-deep">Sản phẩm khác</h3>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-amos-steel">Tời điện, kìm cắt cáp thép, kẹp tôn, dây chằng hàng tăng đơ, lưới che nắng và các vật tư theo yêu cầu.</p>
+                        </div>
                     </article>
                 </div>
             </div>
