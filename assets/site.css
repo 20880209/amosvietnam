@@ -56,6 +56,5 @@ body { background: #f7fafb; }
 .view-btn.is-active { background: #07384A; color: #fff; }
 .pcard[hidden], #sizeTable tr[hidden] { display: none; }
 .cat-strip { scrollbar-width: thin; }
-#sizeTable td .rfq-add, #sizeModal td .rfq-add { vertical-align: middle; }
-@keyframes rfq-bump { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.12); } }
-.rfq-bump { animation: rfq-bump .35s ease; }
+.spec-kv th { width: 38%; white-space: normal; }
+.spec-kv td { text-align: left; white-space: normal; }

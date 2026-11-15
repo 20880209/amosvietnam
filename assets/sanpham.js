@@ -87,7 +87,7 @@
     }
     $$('.view-btn, .view-link').forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
 
-    // size table link → jump to card in grid view
+    // size table product link → jump to its card in grid view
     $$('#sizeTable a[href^="#sp-"]').forEach(function (a) {
         a.addEventListener('click', function (e) {
             e.preventDefault();
@@ -116,20 +116,6 @@
         wrap.className = 'relative overflow-x-auto rounded-md border border-amos-line';
         wrap.appendChild(tpl.content.cloneNode(true));
         body.appendChild(wrap);
-        if (tpl.dataset.sized === '1') {
-            var table = wrap.querySelector('table');
-            $$('thead tr', table).forEach(function (tr, i) {
-                var th = document.createElement('th');
-                if (i === 0) { th.setAttribute('rowspan', table.tHead.rows.length); th.innerHTML = '<span class="sr-only">Báo giá</span>'; tr.appendChild(th); }
-            });
-            // size rows are generated in the same order as the source table rows
-            var adds = $$('#sizeTable tbody .rfq-add').filter(function (b) { return b.dataset.key.indexOf(id + '::') === 0; });
-            $$('tbody tr', table).forEach(function (tr, i) {
-                var td = document.createElement('td');
-                if (adds[i]) td.appendChild(adds[i].cloneNode(true));
-                tr.appendChild(td);
-            });
-        }
         modal.classList.remove('hidden'); modal.classList.add('flex');
         document.body.style.overflow = 'hidden';
         $('.modal-close', modal).focus();
@@ -141,76 +127,7 @@
     }
     $$('.size-open').forEach(function (b) { b.addEventListener('click', function () { openSizes(b.dataset.id, b); }); });
     modal.addEventListener('click', function (e) { if (e.target === modal || e.target.closest('.modal-close')) closeSizes(); });
-
-    // ---------- RFQ list ----------
-    var KEY = 'amos-rfq';
-    var rfq = [];
-    try { rfq = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { rfq = []; }
-    function save() { try { localStorage.setItem(KEY, JSON.stringify(rfq)); } catch (e) { /* ignore */ } }
-    var panel = $('#rfqPanel');
-
-    function rfqText() {
-        var lines = rfq.map(function (it, i) { return (i + 1) + '. ' + it.name + (it.size ? ' – ' + it.size : '') + ' – SL: ' + it.qty; });
-        var note = $('#rfqNote').value.trim();
-        return 'Kính gửi Amos Việt Nam,\n\nVui lòng báo giá các sản phẩm sau:\n' + lines.join('\n') + (note ? '\n\nGhi chú: ' + note : '') + '\n\nTrân trọng.';
-    }
-    function render() {
-        var n = rfq.reduce(function (s, it) { return s + 1; }, 0);
-        $('#rfqCount').textContent = n;
-        $('#rfqFab').classList.toggle('hidden', n === 0);
-        $('#rfqFab').classList.toggle('inline-flex', n > 0);
-        var list = $('#rfqList');
-        list.innerHTML = '';
-        if (!n) { list.innerHTML = '<li class="py-8 text-center text-sm text-amos-steel">Chưa có sản phẩm. Nhấn “Thêm vào báo giá” hoặc nút + ở bảng size.</li>'; }
-        rfq.forEach(function (it, i) {
-            var li = document.createElement('li');
-            li.className = 'flex items-start gap-3 py-3';
-            li.innerHTML = '<div class="min-w-0 flex-1"><p class="text-sm font-bold text-amos-deep"></p><p class="font-mono text-xs text-amos-steel"></p></div>' +
-                '<input type="number" min="1" class="h-9 w-16 rounded border border-amos-line px-2 text-sm" aria-label="Số lượng">' +
-                '<button type="button" class="h-9 w-9 rounded text-amos-steel hover:bg-amos-mist hover:text-red-600" aria-label="Xóa"><i class="fa-solid fa-trash-can"></i></button>';
-            li.querySelector('p').textContent = it.name;
-            li.querySelectorAll('p')[1].textContent = it.size || 'Thông số theo yêu cầu';
-            var q = li.querySelector('input');
-            q.value = it.qty;
-            q.addEventListener('change', function () { it.qty = Math.max(1, parseInt(q.value, 10) || 1); q.value = it.qty; save(); updateMail(); });
-            li.querySelector('button').addEventListener('click', function () { rfq.splice(i, 1); save(); render(); });
-            list.appendChild(li);
-        });
-        updateMail();
-    }
-    function updateMail() {
-        $('#rfqMail').href = 'mailto:cong.nguyen@amosgroup.com?subject=' + encodeURIComponent('Yêu cầu báo giá – amosvietnam.com') + '&body=' + encodeURIComponent(rfqText());
-    }
-    document.addEventListener('click', function (e) {
-        var btn = e.target.closest('.rfq-add');
-        if (!btn) return;
-        var key = btn.dataset.key;
-        var found = rfq.filter(function (it) { return it.key === key; })[0];
-        if (found) found.qty++;
-        else rfq.push({ key: key, name: btn.dataset.name, size: btn.dataset.size, qty: 1 });
-        save(); render();
-        var icon = btn.querySelector('i');
-        if (icon) { icon.className = 'fa-solid fa-check text-xs'; setTimeout(function () { icon.className = 'fa-solid fa-plus text-xs'; }, 1200); }
-        var fab = $('#rfqFab');
-        fab.classList.remove('rfq-bump'); void fab.offsetWidth; fab.classList.add('rfq-bump');
-    });
-    function openPanel() { panel.classList.remove('hidden'); document.body.style.overflow = 'hidden'; $('.rfq-close', panel).focus(); }
-    function closePanel() { panel.classList.add('hidden'); document.body.style.overflow = ''; $('#rfqFab').focus(); }
-    $('#rfqFab').addEventListener('click', openPanel);
-    panel.addEventListener('click', function (e) { if (e.target.closest('.rfq-close') || e.target.classList.contains('rfq-backdrop')) closePanel(); });
-    $('#rfqNote').addEventListener('input', updateMail);
-    $('#rfqClear').addEventListener('click', function () { rfq = []; save(); render(); });
-    $('#rfqCopy').addEventListener('click', function () {
-        var label = this.querySelector('span');
-        var done = function () { label.textContent = 'Đã sao chép'; setTimeout(function () { label.textContent = 'Sao chép'; }, 1500); };
-        if (navigator.clipboard) navigator.clipboard.writeText(rfqText()).then(done, function () {});
-    });
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key !== 'Escape') return;
-        if (!modal.classList.contains('hidden')) closeSizes();
-        else if (!panel.classList.contains('hidden')) closePanel();
-    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeSizes(); });
 
     // "Xem trực tuyến" opens the catalogue lightbox at page 1
     var start = $('.lightbox-start');
@@ -222,7 +139,6 @@
         var btn = cat && $('.f-cat[data-cat="' + cat + '"]');
         if (btn) { $$('.f-cat').forEach(function (b) { b.classList.remove('is-active'); }); btn.classList.add('is-active'); state.cat = cat; }
     } catch (e) { /* ignore */ }
-    render();
     apply();
     if (location.hash.indexOf('#sp-') === 0) { var c = $(location.hash); if (c) { c.hidden = false; setTimeout(function () { c.scrollIntoView({ block: 'center' }); flash(c); }, 100); } }
 })();
