@@ -42,3 +42,20 @@ body { background: #f7fafb; }
     header, footer, .fixed, .page-hero img, .table-filter { display: none !important; }
     .page-hero { color: #000 !important; }
 }
+
+/* Products & catalogue page */
+.filter-h { margin: 1.25rem 0 .5rem; padding-top: 1rem; border-top: 1px solid #D9E6EA; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: #56707c; }
+.f-cat { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: .5rem; border-radius: .375rem; padding: .45rem .6rem; text-align: left; color: #142833; transition: background .15s, color .15s; }
+.f-cat span { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .7rem; color: #56707c; }
+.f-cat:hover { background: #E8F4F7; color: #0B7FA5; }
+.f-cat.is-active { background: #E8F4F7; color: #0B7FA5; font-weight: 700; }
+.f-check { display: flex; align-items: center; gap: .55rem; padding: .35rem .6rem; border-radius: .375rem; cursor: pointer; color: #142833; }
+.f-check:hover { background: #E8F4F7; }
+.f-check input { accent-color: #0B7FA5; }
+.view-btn { display: inline-flex; align-items: center; gap: .4rem; height: 2.1rem; padding: 0 .85rem; border-radius: .3rem; color: #56707c; }
+.view-btn.is-active { background: #07384A; color: #fff; }
+.pcard[hidden], #sizeTable tr[hidden] { display: none; }
+.cat-strip { scrollbar-width: thin; }
+#sizeTable td .rfq-add, #sizeModal td .rfq-add { vertical-align: middle; }
+@keyframes rfq-bump { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.12); } }
+.rfq-bump { animation: rfq-bump .35s ease; }
